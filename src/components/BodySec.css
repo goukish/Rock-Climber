@@ -34,10 +34,16 @@ video {
   
   .hero-btns {
     margin-top: 32px;
+   
   }
   
   .hero-btns .btn {
-    margin: 6px;
+    background-color:Transparent ;
+    margin: 8px;
+    color: white;
+    border: 1px solid #0b1319;
+  
+
   }
   
   .fa-play-circle {
@@ -61,10 +67,7 @@ video {
       font-size: 30px;
     }
   
-    .btn-mobile {
-      display: block;
-      text-decoration: none;
-    }
+
   
     .btn {
       width: 100%;

@@ -1,8 +1,9 @@
-
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import firebase from './Firebase';
-
+import { Button } from './Button';
+import {Link} from 'react-router-dom';
+import './Data.css'
 
 class Data extends React.Component {
 constructor(props) {
@@ -22,7 +23,8 @@ componentDidMount() {
         });
         this.setState({ spe: spe });
       });
-    
+  
+
     
  }
   
@@ -34,38 +36,67 @@ render() {
       </div>
     
       <div className="container">
-          <table id="example" class="display table">
+      {this.state.spe.map(data => {
+        return (
+        <div>
+        <h3>{data.username}</h3>
+        <h4>{data.dataType}</h4>
+        </div>
+        );
+      })
+      }
+      <table id="example" class="display table">
             <thead class="thead-dark">
                 <tr>
-                    <th>Username</th>
-                    <th>EMG</th>
-                    <th>IMU</th>
-                    <th>Pressure</th>
+                    <th>Limb Part</th>
+                    <th>X position</th>
+                    <th>Y position</th>
+                    <th>Hold Sense</th>
                 </tr>
             </thead>
             <tbody>
             {this.state.spe.map(data => {
                 
                 return (
-                    <tr>     
-                    <td>{data.username}</td>
-                    <td>{data.emg}</td>
-                    <td>{data.imu}</td>
-                    <td>{data.pressure}</td>
+                      
+                    <tr>   
+                      
+                    <td>{data.Limb}</td>
+                    <td>{data.x}</td>
+                    <td>{data.y}</td>
+                    <td>{data.holdSensed}</td>
                     </tr>
                     
                 );
                
-                })}
-        
+                })
+
+                }
+                 <div className='btn'> <Link to = "/page4_report"><Button
+                          className='btns'
+                          buttonStyle='btn--outline'
+                          buttonSize='btn--large'
+                          >
+                          <h5>Custom Report</h5>
+                          </Button>
+                          <br/>
+                          </Link> </div>
                
             </tbody>
             
          </table>
+
+      
           
+              
+            
+
+         
      </div>
     </div>
+
   );
+
 }
 }
 

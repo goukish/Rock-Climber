@@ -1,0 +1,29 @@
+img{
+height : 1000px;
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+figcaption {
+        caption-side: top;
+        background-color: black;
+        color: white;
+        font-style: italic;
+        text-align: center;
+        font-size: 50px;
+      }
+  
+figure {
+    border: 1px #cccccc solid;
+    padding: 4px;
+    margin: auto;
+  }

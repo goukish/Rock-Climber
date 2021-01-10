@@ -1,0 +1,89 @@
+Line chart 
+
+// const state = {
+//   labels: ['1sec','2secs', '3secs','4secs','5secs', '6secs', '7secs','8secs', '9secs','10secs'],
+//   datasets: [
+//     {
+//       label: 'Data',
+//       fill: false,
+//       lineTension: 0.5,
+//       backgroundColor: 'rgba(75,192,192,1)',
+//       borderColor: 'rgba(0,0,0,1)',
+//       borderWidth: 2,
+//       data: [0, 20, 30, 80, 56]
+//     }
+//   ]
+// }
+
+          <Line
+           data={state}
+           {this.state.spe.map(data => {
+               
+                
+            return (
+                labels: [{data.username}]
+            
+                
+            );
+           
+            })
+            options={{
+                scales: {
+                    yAxes: [{
+                      scaleLabel: {
+                        display: true,
+                        labelString: 'Distance',
+                        fontSize:20
+                      }
+                    }],
+                    xAxes: [{
+                        scaleLabel: {
+                          display: true,
+                          labelString: 'Time',
+                          fontSize:20
+                        }
+                      }]
+                  }, 
+                title:{
+                display:true,
+                text:'Rock Climbing Tracker',
+                fontSize:20
+              },
+              legend:{
+                display:true,
+                position:'right'
+              }
+            }}
+          /> 
+
+
+Kendo React
+
+                {/* <Chart style={{width: 1000}}>
+                <ChartPlotArea background="#888" />
+                
+                    <ChartTitle text="Charge current vs. charge time" color="black" />
+                    <ChartSeries color="black">
+                        <ChartSeriesItem
+                            type="scatter"
+                            data={data}
+                            labels={data}
+                            xField="rainfall"
+                            yField="windSpeed"
+                            color="black"
+                            
+                        />
+                    </ChartSeries>
+                    <ChartXAxis>
+                        <ChartXAxisItem title={{ text: 'Wind Speed [km/h]'}} color="black" />
+                    </ChartXAxis>
+                    <ChartYAxis>
+                        <ChartYAxisItem title={{ text: 'Rainfall [mm]' }} color="black" />
+                    </ChartYAxis>
+                </Chart> */}
+              
+
+
+
+  
+
