@@ -9,7 +9,6 @@ class Data extends React.Component {
 constructor(props) {
     
     super(props);
-   
     this.state = {spe : []}
     }
     
@@ -21,12 +20,9 @@ componentDidMount() {
             // snap.val() is the dictionary with all your keys/values from the 'spells' path
             spe.push(snap.val());
         });
-        this.setState({ spe: spe });
+        this.setState({ spe: spe.slice(0,5) });
       });
-  
-
-    
- }
+}
   
 render() {
   return (
@@ -34,7 +30,7 @@ render() {
       <div class="jumbotron text-center bg-sky">
           <h2>User Data</h2>
       </div>
-    
+
       <div className="container">
       {this.state.spe.map(data => {
         return (
@@ -55,6 +51,7 @@ render() {
                 </tr>
             </thead>
             <tbody>
+
             {this.state.spe.map(data => {
                 
                 return (
@@ -86,7 +83,7 @@ render() {
             
          </table>
 
-      
+
           
               
             
@@ -98,6 +95,7 @@ render() {
   );
 
 }
+
 }
 
 export default Data;

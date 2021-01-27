@@ -82,7 +82,25 @@ Kendo React
                     </ChartYAxis>
                 </Chart> */}
               
-
+{/* <Scatter
+                    //spe={this.state.dataScatter}
+                    
+                    data={data}
+                    
+                    options={{
+                            title: {
+                                    display: true,
+                                    text: 'Rock Climbing Tracker ',
+                                    fontSize: 20
+                            },
+                            legend: {
+                                    display: true,
+                                    position: 'right'
+                            }
+                    }}
+                        
+                
+                /> */}
 
 
   
