@@ -18,7 +18,8 @@ import {
     ChartTooltip,
     ChartSeriesItemTooltip,
     ChartCategoryAxisItem,
-    ChartValueAxisItem
+    ChartValueAxisItem,
+    ChartSeriesMarkers
 
 } from '@progress/kendo-react-charts';
 
@@ -44,30 +45,7 @@ class Reports extends React.Component{
     }
     
 render(){
-        const notes = {
-            label: {
-                color: 'black'
-                
-            },
-            line: {
-                length: 30,
-                color:'black'
-            },
-            icon: {
-                visible: true,
-                color:'red',
-                type: 'square',
-            },
-            position:'top'
-        }
-        const markers = {
-            visible: true,
-            size: 30,
-            
-        }
-        
-         
-        return(
+    return(
             
     <div className="MainDiv">
                 
@@ -76,7 +54,24 @@ render(){
                 </div>
                 
         {this.state.spe.map(d => {
-                  return(  
+
+            const notes = {
+                label: {
+                    color: 'black'
+                },
+                line: {
+                    length: 30,
+                    color:'black'
+                },
+                icon: {
+                    visible: true,
+                    color:'red',
+                    type: 'square',
+                },
+                position:'top'
+
+            }
+            return(  
                       
             <Chart >
                 <ChartArea background="#00e6e6" height="700" width="1860" />
@@ -84,16 +79,16 @@ render(){
                     <ChartSeries>
                         <ChartSeriesItem
                             type="scatterLine"
+                            width="3"
                             data={d.data}
                             xField="x"
                             yField="y"
                             noteTextField="note"
                             notes={notes}
                             color="red"
-                            markers={markers}
+                            markers={{visible:true, size:20}}
                             
                         /></ChartSeries>
-                     
                      <ChartTooltip color="white"/>
                     <ChartXAxis>
                         <ChartXAxisItem  title={{ text: 'Xaxis'}} color="black" crosshair={{ visible: true, tooltip: { visible: true }}} />
