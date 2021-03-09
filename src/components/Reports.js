@@ -2,6 +2,9 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import firebase from './Firebase';
 import 'hammerjs';
+import './Problem.css';
+
+
 
 
 import {
@@ -14,12 +17,8 @@ import {
     ChartSeries,
     ChartSeriesItem,
     ChartArea,
-    Sparkline,
-    ChartTooltip,
-    ChartSeriesItemTooltip,
-    ChartCategoryAxisItem,
-    ChartValueAxisItem,
-    ChartSeriesMarkers
+    ChartTooltip
+ 
 
 } from '@progress/kendo-react-charts';
 
@@ -57,7 +56,9 @@ render(){
 
             const notes = {
                 label: {
-                    color: 'black'
+                    color: 'black',
+                    background:'pink'
+                    
                 },
                 line: {
                     length: 30,
@@ -66,19 +67,24 @@ render(){
                 icon: {
                     visible: true,
                     color:'red',
-                    type: 'square',
+                    type: 'cross'
+                    
                 },
                 position:'top'
 
             }
             return(  
-                      
+                <figure>  
+                    <div className="photo" style={{ backgroundImage: "url(/images/7.jpg)", opacity: 0.8 }}>
+                    
             <Chart >
-                <ChartArea background="#00e6e6" height="700" width="1860" />
-                    <ChartTitle text="Rock Climber Tracker" color="black" />
+            
+                <ChartArea   height="700" width="1860" />
+                
+                    <ChartTitle text="Rock Climber Tracker" font="30pt sans-serif" color="black" />
                     <ChartSeries>
                         <ChartSeriesItem
-                            type="scatterLine"
+                            type="scatter"
                             width="3"
                             data={d.data}
                             xField="x"
@@ -86,18 +92,32 @@ render(){
                             noteTextField="note"
                             notes={notes}
                             color="red"
-                            markers={{visible:true, size:20}}
-                            
-                        /></ChartSeries>
+                            markers={{visible:true, size:30}}
+                            //dashType="longDash"
+                        />
+                        <ChartSeriesItem
+                            type="scatterLine"
+                            width="3"
+                            data={d.data}
+                            xField="Avgx"
+                            yField="Avgy"
+                            noteTextField="note"
+                            notes={notes}
+                            color="red"
+                            markers={{visible:true, size:30}}
+                            dashType="longDash"
+                        />
+                        </ChartSeries>
                      <ChartTooltip color="white"/>
                     <ChartXAxis>
                         <ChartXAxisItem  title={{ text: 'Xaxis'}} color="black" crosshair={{ visible: true, tooltip: { visible: true }}} />
                     </ChartXAxis>
                     <ChartYAxis>
-                        <ChartYAxisItem  title={{ text: 'Yaxis' }} color="black" crosshair={{ visible: true, tooltip: { visible: true }}}/>
+                        <ChartYAxisItem background="white"  title={{ text: 'Yaxis' }} color="black" crosshair={{ visible: true, tooltip: { visible: true }}}/>
                     </ChartYAxis>
             </Chart> 
-
+            </div>
+            </figure> 
 
                 );
                

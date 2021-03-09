@@ -27,3 +27,11 @@ figure {
     padding: 4px;
     margin: auto;
   }
+
+.photo{
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
