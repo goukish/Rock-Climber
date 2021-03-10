@@ -45,8 +45,9 @@ render() {
             <thead class="thead-dark">
                 <tr>
                     <th>Limb Part</th>
-                    <th>X position</th>
-                    <th>Y position</th>
+                    <th>X position (m)</th>
+                    <th>Y position (m)</th>
+                    <th>Pressure value (Pa)</th>
                     <th>Hold Sense</th>
                 </tr>
             </thead>
@@ -61,6 +62,7 @@ render() {
                     <td>{data.Limb}</td>
                     <td>{data.x}</td>
                     <td>{data.y}</td>
+                    <td>{data.Pressure}</td>
                     <td>{data.holdSensed}</td>
                     </tr>
                     
@@ -82,7 +84,7 @@ render() {
             </tbody>
             
          </table>
-
+         
 
           
               
