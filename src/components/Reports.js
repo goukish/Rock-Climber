@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import firebase from './Firebase';
 import 'hammerjs';
 import './Problem.css';
-import { RadioButton } from '@progress/kendo-react-inputs';
+import { Button } from './Button';
+import {Link} from 'react-router-dom';
 
 
 
@@ -142,11 +143,22 @@ render(){
             </div>
             </figure> 
 
-                );
+            );
             
         })
         }
+                         <div className='btn'> <Link to = "/page2"><Button
+                          className='btns'
+                          buttonStyle='btn--outline'
+                          buttonSize='btn--large'
+                          
+                          >
+                          <h5>Get Data</h5>
+                          </Button>
+                          <br/>
+                          </Link> </div>
     </div>
+    
             );
             
 }

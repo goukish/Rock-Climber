@@ -35,3 +35,7 @@ figure {
   flex-flow: row nowrap;
   align-items: center;
 }
+
+.btn{
+  float:right
+}

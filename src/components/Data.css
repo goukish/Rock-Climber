@@ -3,7 +3,9 @@
 .btn .btn {
   background-color: #4E5456 ;
   color: white;
-  
-  
+}
+
+th, td {
+  font-size: 25px;
 }
  

@@ -71,7 +71,15 @@ render() {
                 })
 
                 }
-                 <div className='btn'> <Link to = "/page4_report"><Button
+               
+               
+            </tbody>
+            
+         </table>
+         
+
+          
+         <div className='btn'> <Link to = "/page4_report"><Button
                           className='btns'
                           buttonStyle='btn--outline'
                           buttonSize='btn--large'
@@ -80,14 +88,6 @@ render() {
                           </Button>
                           <br/>
                           </Link> </div>
-               
-            </tbody>
-            
-         </table>
-         
-
-          
-              
             
 
          
