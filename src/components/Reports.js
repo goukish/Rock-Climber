@@ -21,6 +21,7 @@ import {
     ChartTooltip,
  } from '@progress/kendo-react-charts';
 import { DropDownList } from '@progress/kendo-react-dropdowns';
+import { Input } from 'hammerjs';
 
 class Reports extends React.Component{
     constructor(props) {
@@ -33,35 +34,31 @@ class Reports extends React.Component{
        
       firebase.database().ref("spells1").on("value", snapshot => {
             let spe = [];
+            
             snapshot.forEach(snap => {
                 spe.push(snap.val());
 
             });
-            this.setState({ spe: spe });
+            this.setState({spe: spe });
           });
 
           
     }
-    limb = [
-        { text: 'Basketball', id: 1 },
-        { text: 'Football', id: 2 },
-        { text: 'Tennis', id: 3 },
-        { text: 'Volleyball', id: 4 }
-    ];
-    state = {
-        value: { text: 'Football', id: 2 }
-    };
+
 
     handleChange = (event) => {
         this.setState({
-            value: event.target.value
+            value: event.target.value,
+            number: event.target.value
         });
     }
+
+     
+     
 render(){
     return(
-            
+
     <div className="MainDiv">
-                
                 <div class="jumbotron text-center bg-sky">
                 <h2>Reports</h2>
                 </div>
@@ -73,8 +70,13 @@ render(){
                     value={this.state.value}
                     onChange={this.handleChange}
                 />
+                </div >
+                <div class="text-center text-success">
+                    <form onSubmit={this.handleSubmit}>
+                        <label htmlFor="number">Data collection (Increment of 4): </label>
+                        <input id="number" name="number" type="text"  value={this.state.username} onChange={this.handleChange} />
+                        </form>  
                 </div>
-                
         {this.state.spe.map(d => {
 
             const notes = {
@@ -97,12 +99,18 @@ render(){
 
             }
 
+            const num = this.state.number
+        
+
             return(  
                 <figure>  
                     <div className="photo" style={{ backgroundImage: "url(/images/7.jpg)", opacity: 0.8 }}>
                     
             <Chart >
-                
+                    <input
+                    type='number'
+                    id='num'
+                    />
                 <ChartArea   height="700" width="1860" />
                 
                     <ChartTitle text="Rock Climber Tracker" font="30pt sans-serif" color="black" />
@@ -110,7 +118,7 @@ render(){
                         <ChartSeriesItem
                             type="scatter"
                             width="3"
-                            data={d.data}
+                            data={d.data.slice(0,num)}
                             xField="x"
                             yField="y"
                             noteTextField="note"

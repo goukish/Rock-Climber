@@ -31,7 +31,7 @@ return (
     buttonStyle='btn--outline'
     buttonSize='btn--large'
     >
-    <h3>Browse Rock Climbing problem sets</h3>
+    <h3>Problem sets</h3>
     </Button>
     </Link> 
     </div>

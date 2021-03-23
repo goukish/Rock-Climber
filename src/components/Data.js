@@ -45,9 +45,10 @@ render() {
             <thead class="thead-dark">
                 <tr>
                     <th>Limb Part</th>
-                    <th>X position (m)</th>
-                    <th>Y position (m)</th>
-                    <th>Pressure value (Pa)</th>
+                    <th>IMU - X (m)</th>
+                    <th>IMU - Y (m)</th>
+                    <th>Pressure (Pa)</th>
+                    <th>EMG (%)</th>
                     <th>Hold Sense</th>
                 </tr>
             </thead>
@@ -63,6 +64,7 @@ render() {
                     <td>{data.x}</td>
                     <td>{data.y}</td>
                     <td>{data.Pressure}</td>
+                    <td>{data.EMG}</td>
                     <td>{data.holdSensed}</td>
                     </tr>
                     
