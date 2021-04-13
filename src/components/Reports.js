@@ -60,21 +60,22 @@ render(){
 
     <div className="MainDiv">
                 <div class="jumbotron text-center bg-sky">
-                <h2>Reports</h2>
+                <h2>Reports - Sample Data</h2>
                 </div>
-                <div>
-                <DropDownList
-                    data={this.limb}
-                    textField="text"
-                    dataItemKey="id"
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                />
-                </div >
+                
                 <div class="text-center text-success">
                     <form onSubmit={this.handleSubmit}>
-                        <label htmlFor="number">Data collection (Increment of 4): </label>
-                        <input id="number" name="number" type="text"  value={this.state.username} onChange={this.handleChange} />
+                        <label htmlFor="number">Latest data collection: </label>
+                        <input id="number" name="number" type="number"  value={this.state.username} onChange={this.handleChange} />
+                        {/* <label>
+                            Pick limb:
+                            <select value={this.state.value} onChange={this.handleChange}>
+                                <option value="grapefruit">Right Hand</option>
+                                <option value="lime">Right Leg</option>
+                                <option value="coconut">Left Hand</option>
+                                <option value="mango">Left leg</option>
+                            </select>
+                        </label> */}
                         </form>  
                 </div>
         {this.state.spe.map(d => {
@@ -100,17 +101,14 @@ render(){
             }
 
             const num = this.state.number
-        
+            
 
             return(  
                 <figure>  
                     <div className="photo" style={{ backgroundImage: "url(/images/7.jpg)", opacity: 0.8 }}>
                     
             <Chart >
-                    <input
-                    type='number'
-                    id='num'
-                    />
+ 
                 <ChartArea   height="700" width="1860" />
                 
                     <ChartTitle text="Rock Climber Tracker" font="30pt sans-serif" color="black" />

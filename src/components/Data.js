@@ -28,7 +28,7 @@ render() {
   return (
     <div className="MainDiv">
       <div class="jumbotron text-center bg-sky">
-          <h2>User Data</h2>
+          <h2>User Data - Sample Data</h2>
       </div>
 
       <div className="container">
